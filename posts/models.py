@@ -19,7 +19,7 @@ class post (models.Model):
     title = models.CharField(max_length=100)
     publish_date = models.DateTimeField()
     content = models.TextField(max_length=15000)
-    author = models.ForeignKey(author,related_name='post_author',on_delete=models.CASCADE )
+    author = models.ForeignKey(author,related_name='post_authors',on_delete=models.CASCADE )
     image = models.ImageField (upload_to='posts')
     tags = TaggableManager()
     def __str__(self):
