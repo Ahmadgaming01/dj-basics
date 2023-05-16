@@ -22,7 +22,7 @@ from posts.views import posts_List , post_detail
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/',posts_List),
-    path('blog/<int : post_id>', post_detail)
+    path('blog/<int:post_id>', post_detail)
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
