@@ -16,5 +16,23 @@ def post_detail(request ,post_id):
  
 
 def new_post (request):
+    if request.method == 'POST':
+        form = PostForm(request.POST , request.FILES)
+        if form.is_valid():
+            form.save()
+
+    else:
+        form = PostForm()
+    form = PostForm()
+    return render (request , 'posts/new.html', {'form':form})
+
+def edit_post (request):
+    if request.method == 'POST':
+        form = PostForm(request.POST , request.FILES)
+        if form.is_valid():
+            form.save()
+
+    else:
+        form = PostForm()
     form = PostForm()
     return render (request , 'posts/new.html', {'form':form})
