@@ -26,7 +26,7 @@ def new_post (request):
     form = PostForm()
     return render (request , 'posts/new.html', {'form':form})
 
-def edit_post (request):
+def edit_post (request ,psot_id):
     if request.method == 'POST':
         form = PostForm(request.POST , request.FILES)
         if form.is_valid():
@@ -35,4 +35,5 @@ def edit_post (request):
     else:
         form = PostForm()
     form = PostForm()
-    return render (request , 'posts/new.html', {'form':form})
+    return render (request , 'posts/edit.html', {'form':form})
+
