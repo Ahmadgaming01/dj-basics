@@ -20,7 +20,7 @@ def new_post (request):
         form = PostForm(request.POST , request.FILES)
         if form.is_valid():
             form.save()
-            return redirect(/blog/)
+            return redirect ('/blog/')
 
     else:
         form = PostForm()
@@ -33,10 +33,14 @@ def edit_post (request ,post_id):
         form = PostForm(request.POST , request.FILES , instance=data)
         if form.is_valid():
             form.save()
-            return redirect(/blog/)
+            return redirect ('/blog/')
 
     else:
         form = PostForm(instance=data)
     
     return render (request , 'posts/edit.html', {'form':form})
 
+def delete_post (request , post_id):
+    data = post.objects.get(id=post_id)
+    data.delete()
+    return  redirect ('/blog/')
