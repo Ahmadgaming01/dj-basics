@@ -1,8 +1,8 @@
 <h1>blog</h1>
 <a href="/blog/new">add new post</a>
 
-{{posts}}
+
 
 {% for post in posts %}   
-    <h3><a href="">{{post}}</a></h3>
+    <h3><a href="/blog/{{post.id}}">{{post}}</a></h3>
 {% endfor %}

@@ -7,4 +7,3 @@ class PostForm (forms.ModelForm):
         model = post
         fields = '__all__'
 
-

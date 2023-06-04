@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/',posts_List),
     path('blog/new', new_post),
-    path('blog/<int:post_id>', new_post),
+    path('blog/<int:post_id>', post_detail),
     path('blog/<int:post_id>/edit', edit_post),
     path('blog/<int:post_id>/delete', delete_post),
 
