@@ -1,19 +1,20 @@
 from django.shortcuts import render ,redirect
 from.models import post
 from.forms import PostForm
-
+from django.views import generic
 # Create your views here.
 
 
-def posts_List(request):
-    data = post.objects.all ()
-    return render(request, 'posts/posts.html',{'posts':data})
+class PostList(generic.ListView):
+    model = post
+    
 
+class PostDetail(generic.DetailView):
+    model = post
 
-
-def post_detail(request ,post_id):
-    data = post.objects.get(id=post_id)
-    return render (request , 'posts/detail.html',{'post':data})
+class PostCreate(generic.CreateView):
+    model=post
+    fields = ['title', 'publish_date','content','author','image','tags']
 
 
 def new_post (request):
